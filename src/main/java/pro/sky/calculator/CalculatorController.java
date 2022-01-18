@@ -26,7 +26,7 @@ public class CalculatorController {
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam(required = true) int num1, @RequestParam(required = true) int num2) {
+    public String minus(@RequestParam(required = true) int num1, @RequestParam(required = true)int num2) {
         return calculatorService.difference(num1, num2);
     }
 
