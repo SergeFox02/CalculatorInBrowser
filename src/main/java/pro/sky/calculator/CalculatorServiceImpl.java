@@ -10,25 +10,25 @@ public class CalculatorServiceImpl implements CalculatorService{
     }
 
     @Override
-    public String sum(int num1, int num2) {
-        return num1 + " + " + num2 + " = " + (num1 + num2);
+    public int sum(int num1, int num2) {
+        return num1 + num2;
     }
 
     @Override
-    public String difference(int num1, int num2) {
-        return num1 + " - " + num2 + " = " + (num1 - num2);
+    public int difference(int num1, int num2) {
+        return num1 - num2;
     }
 
     @Override
-    public String multiply(int num1, int num2) {
-        return num1 + " * " + num2 + " = " + (num1 * num2);
+    public int multiply(int num1, int num2) {
+        return num1 * num2;
     }
 
     @Override
-    public String divide(int num1, int num2) {
+    public int divide(int num1, int num2) {
         if (num2 != 0) {
-            return num1 + " / " + num2 + " = " + (num1 / num2);
+            return num1 / num2;
         } else
-            return "Деление на 0 в Java запрещено! \nВедите корректное число num2.";
+            return 0;
     }
 }

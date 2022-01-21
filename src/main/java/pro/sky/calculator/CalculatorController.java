@@ -21,22 +21,26 @@ public class CalculatorController {
     }
 
     @GetMapping("/plus")
-    public String plus(@RequestParam(required = true) int num1, @RequestParam(required = true) int num2) {
-        return calculatorService.sum(num1, num2);
+    public String plus(@RequestParam int num1, @RequestParam int num2) {
+        return num1 + " + " + num2 + " = " + calculatorService.sum(num1, num2);
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam(required = true) int num1, @RequestParam(required = true)int num2) {
-        return calculatorService.difference(num1, num2);
+    public String minus(@RequestParam int num1, @RequestParam int num2) {
+        return num1 + " - " + num2 + " = " + calculatorService.difference(num1, num2);
     }
 
     @GetMapping("/multiply")
-    public String multiply(@RequestParam(required = true) int num1, @RequestParam(required = true) int num2) {
-        return calculatorService.multiply(num1, num2);
+    public String multiply(@RequestParam int num1, @RequestParam int num2) {
+        return num1 + " * " + num2 + " = " + calculatorService.multiply(num1, num2);
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam(required = true) int num1, @RequestParam(required = true) int num2) {
-        return calculatorService.divide(num1, num2);
+    public String divide(@RequestParam int num1, @RequestParam int num2) {
+        if (num2 != 0) {
+            return num1 + " * " + num2 + " = " + calculatorService.divide(num1, num2);
+        } else {
+            return "Дление на 0 в Java запрещено!";
+        }
     }
 }
