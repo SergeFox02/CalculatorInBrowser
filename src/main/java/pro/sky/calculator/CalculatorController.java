@@ -53,10 +53,6 @@ public class CalculatorController {
         if (num1 == null || num2 == null){
             return "Введите корректные данные!";
         }
-        if (num2 != 0) {
             return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
-        } else {
-            return "Дление на 0 в Java запрещено!";
-        }
     }
 }
